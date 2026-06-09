@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter:6.1.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // RestAssured for API testing
+    testImplementation 'io.rest-assured:rest-assured:6.0.0'
+
+    // Allure
+    testImplementation 'io.qameta.allure:allure-junit5:2.35.2'
+    implementation 'io.qameta.allure:allure-rest-assured:2.35.2'
+
+    // Jackson for JSON processing
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    testImplementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.2'
+
+    // SLF4J Simple Binding
+    testImplementation 'org.slf4j:slf4j-simple:2.0.12'
+}
+
+test {
+    useJUnitPlatform()
+}
